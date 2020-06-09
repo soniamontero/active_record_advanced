@@ -34,6 +34,8 @@ db_namespace = namespace :db do
     rm_f db_path
   end
 
+
+
   desc 'migrate the database (options: VERSION=x).'
   task :migrate do
     ActiveRecord::Migrator.migrations_paths << \
@@ -70,7 +72,6 @@ db_namespace = namespace :db do
   namespace :schema do
     desc 'Create a db/schema.rb file that can be portably used against any DB supported by AR'
     task :dump do
-
       require 'active_record/schema_dumper'
       filename = 'db/schema.rb'
 
